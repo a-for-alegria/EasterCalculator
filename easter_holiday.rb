@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require_relative 'easter'
 include Orthodox
 
@@ -17,5 +18,5 @@ end
 if __FILE__ == $0
   h = Holiday.new(Time.now.year)
   h.intro
-  h.summ(@year)
+  h.orthodox(@year) {gets.chomp.to_i}
 end

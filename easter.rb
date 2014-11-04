@@ -1,6 +1,6 @@
 module Orthodox 
-  def summ(year)
-    year = gets.chomp.to_i 
+  def orthodox(year)
+    year = yield
     a = year % 19
     b = year % 4
     c = year % 7
