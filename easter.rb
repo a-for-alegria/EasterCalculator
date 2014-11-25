@@ -33,7 +33,6 @@ class Holiday
 end
 
 # if __FILE__ == $0
-#   h = Holiday.new
-#   h.orthodox 
+#   h = Holiday.new.orthodox 
 # end
 
