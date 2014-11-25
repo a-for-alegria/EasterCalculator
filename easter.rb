@@ -10,8 +10,8 @@ class Holiday
   
   private
   
-  def month_selector(year_secondary = nil)
-    year = yield || year_secondary
+  def month_selector
+    year = yield
     f = variable_calculation(year)
     if f<=9 
       day = 22+f
@@ -44,3 +44,4 @@ end
 #   h = Holiday.new
 #   h.orthodox 
 # end
+
