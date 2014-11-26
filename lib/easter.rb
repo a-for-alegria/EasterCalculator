@@ -13,15 +13,16 @@ class Holiday
   def month_selector
     year = yield
     f = variable_calculation(year)
-    f<=9 
-    day = 22+f
-    day += 13 if year > 1918
-    month = "March"
-    if day > 31 
-      day -= 31 
-      month = "April"
-    end
-    if
+    if  
+      f<=9 
+      day = 22+f
+      day += 13 if year > 1918
+      month = "March"
+      if day > 31 
+        day -= 31 
+        month = "April"
+      end
+    else
       day = f-9
       day += 13 if year > 1918
       month = "April"
@@ -40,7 +41,6 @@ class Holiday
   end
 end
 
-if __FILE__ == $0
-  h = Holiday.new
-  h.orthodox 
-end
+# if __FILE__ == $0
+#   h = Holiday.new.orthodox
+# end
