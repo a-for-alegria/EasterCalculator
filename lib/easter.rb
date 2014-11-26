@@ -10,23 +10,23 @@ class Holiday
   
   private
   
-  def month_selector(year_secondary = nil)
-    year = yield || year_secondary
+  def month_selector
+    year = yield
     f = variable_calculation(year)
-    if f<=9 
-      day = 22+f
-      day += 13 if year > 1918
-      month = "March"
-      if day > 31
-        day -= 31 
-        month = "April"
-      end
-    else
+    f<=9 
+    day = 22+f
+    day += 13 if year > 1918
+    month = "March"
+    if day > 31 
+      day -= 31 
+      month = "April"
+    end
+    if
       day = f-9
       day += 13 if year > 1918
       month = "April"
-      if day > 30
-        day -= 30 
+      if day > 30 
+        day -= 30
         month = "May"
       end
     end
@@ -40,7 +40,7 @@ class Holiday
   end
 end
 
-# if __FILE__ == $0
-#   h = Holiday.new
-#   h.orthodox 
-# end
+if __FILE__ == $0
+  h = Holiday.new
+  h.orthodox 
+end
