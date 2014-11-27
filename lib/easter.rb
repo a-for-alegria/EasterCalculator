@@ -3,8 +3,7 @@
 class Holiday
 
   def orthodox
-    puts "| Welcome to \"Easter Calculator\""
-    puts "| Please enter the year: ... "
+    puts "| Welcome to \"Easter Calculator\"\n| Please enter the year: ... "
     month_selector{gets.chomp.to_i}
   end
   
