@@ -18,18 +18,12 @@ class Holiday
       day = 22+f
       day += 13 if year > 1918
       month = "March"
-      if day > 31 
-        day -= 31 
-        month = "April"
-      end
+      if day > 31 then day -= 31 and month = "April" end
     else
       day = f-9
       day += 13 if year > 1918
       month = "April"
-      if day > 30 
-        day -= 30
-        month = "May"
-      end
+      if day > 30 then day -= 30 and month = "May" end
     end
     puts "| Year: #{year}\n| Date of Easter: #{day} of #{month}."
   end
@@ -41,6 +35,6 @@ class Holiday
   end
 end
 
-# if __FILE__ == $0
-#   h = Holiday.new.orthodox
-# end
+if __FILE__ == $0
+  h = Holiday.new.orthodox
+end
