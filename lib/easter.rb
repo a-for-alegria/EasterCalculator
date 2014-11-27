@@ -18,12 +18,12 @@ class Holiday
       day = 22+f
       day += 13 if year > 1918
       month = "March"
-      day > 31 ? (day -= 31; month = "April") : nil
+      (day -= 31; month = "April") if day > 31
     else
       day = f-9
       day += 13 if year > 1918
       month = "April"
-      day > 30 ? (day -= 30; month = "May") : nil
+      (day -= 30; month = "May") if day > 30
     end
     puts "| Year: #{year}\n| Date of Easter: #{day} of #{month}."
   end
