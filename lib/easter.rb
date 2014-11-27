@@ -14,13 +14,11 @@ class Holiday
     f = variable_calculation(year)
     if  
       f<=9 
-      day = 22+f
-      day += 13 if year > 1918
+      (day = 22+f) and (year > 1918) and (day += 13)
       month = "March"
       (day -= 31; month = "April") if day > 31
     else
-      day = f-9
-      day += 13 if year > 1918
+      (day = f-9) and (year > 1918) and (day += 13)
       month = "April"
       (day -= 30; month = "May") if day > 30
     end
@@ -34,6 +32,6 @@ class Holiday
   end
 end
 
-# if __FILE__ == $0
-#   h = Holiday.new.orthodox
-# end
+if __FILE__ == $0
+  h = Holiday.new.orthodox
+end
