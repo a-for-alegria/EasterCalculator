@@ -9,7 +9,7 @@ class Holiday
   
   private
   
-  def month_selector(&block)
+  def month_selector
     year = yield
     f = variable_calculation(year)
     if  
